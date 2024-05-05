@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <MainContext.Provider value={{ loginEmail, setLoginEmail }}>
       <html lang="en">
+   <Toaster position="bottom-center" />
         <body className={inter.className}>{children}</body>
       </html>
     </MainContext.Provider>
