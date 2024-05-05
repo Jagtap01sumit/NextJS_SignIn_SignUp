@@ -17,6 +17,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { MainContext } from "../../context/MainContext";
+import { toast } from "react-hot-toast";
 
 export default function PassVerify({ setselectedForm, handleLogin }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -57,7 +58,8 @@ export default function PassVerify({ setselectedForm, handleLogin }) {
       console.log(responseData);
       if (res.ok) {
         console.log("hello");
-        // window.location.href = "/auth";
+         toast.success("login successful");
+         window.location.href = "/dashboard";
         reset();
       } else {
         throw new Error("Something went wrong");
